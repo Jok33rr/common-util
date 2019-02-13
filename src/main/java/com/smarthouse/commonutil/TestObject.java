@@ -1,4 +1,7 @@
+package com.smarthouse.commonutil;
+
 public class TestObject {
+
     private final String name;
 
     public TestObject(String name) {

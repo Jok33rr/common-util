@@ -1,6 +1,6 @@
 package com.smarthouse.commonutil.entities;
 
-public class Customer {
+public class User {
 
     private final long id;
     private String name;
@@ -9,29 +9,29 @@ public class Customer {
     private String password;
     private Role role;
 
-    public Customer(final long id) {
+    public User(final long id) {
         this.id = id;
     }
 
-    public Customer(final long id, final String name) {
+    public User(final long id, final String name) {
         this.id = id;
         this.name = name;
     }
 
-    public Customer(final long id, final String name, final String email) {
+    public User(final long id, final String name, final String email) {
         this.id = id;
         this.name = name;
         this.email = email;
     }
 
-    public Customer(final long id, final String name, final String email, final String phoneNumber) {
+    public User(final long id, final String name, final String email, final String phoneNumber) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.phoneNumber = phoneNumber;
     }
 
-    public Customer(final long id, final String name, final String email, final String phoneNumber, final String password) {
+    public User(final long id, final String name, final String email, final String phoneNumber, final String password) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -39,7 +39,7 @@ public class Customer {
         this.password = password;
     }
 
-    public Customer(final long id, final String name, final String email, final String phoneNumber, final String password, final Role role) {
+    public User(final long id, final String name, final String email, final String phoneNumber, final String password, final Role role) {
         this.id = id;
         this.name = name;
         this.email = email;

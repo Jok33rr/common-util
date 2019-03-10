@@ -4,15 +4,24 @@ public class Role {
 
     private final Long id;
     private String name;
-    private Integer accessLevel;
+    private int accessLevel;
 
-    public Role(long id, String name, Integer accessLevel) {
+    public Role(final long id) {
+        this.id = id;
+    }
+
+    public Role(final Long id, final String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public Role(final Long id, final String name, final int accessLevel) {
         this.id = id;
         this.name = name;
         this.accessLevel = accessLevel;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -20,15 +29,15 @@ public class Role {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
         this.name = name;
     }
 
-    public Integer getAccessLevel() {
+    public int getAccessLevel() {
         return accessLevel;
     }
 
-    public void setAccessLevel(Integer accessLevel) {
+    public void setAccessLevel(final int accessLevel) {
         this.accessLevel = accessLevel;
     }
 }

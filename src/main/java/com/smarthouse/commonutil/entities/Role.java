@@ -1,8 +1,5 @@
 package com.smarthouse.commonutil.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NonNull;
 import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.Entity;
@@ -12,21 +9,45 @@ import javax.persistence.Id;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 
-@Data
-@AllArgsConstructor
 @Entity
 public class Role {
 
     @Id
-    @NonNull
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    @NonNull
+    private Long id;
     @Length(max = 255)
     private String name;
     @Min(0) // ADMIN
     @Max(3) // WEAK_OBSERVER
-    @NonNull
     private int accessLevel;
 
+    public Role() {
+
+    }
+
+    public Role(final Long id, final String name, final int accessLevel) {
+        this.id = id;
+        this.name = name;
+        this.accessLevel = accessLevel;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAccessLevel() {
+        return accessLevel;
+    }
+
+    public void setAccessLevel(int accessLevel) {
+        this.accessLevel = accessLevel;
+    }
 }

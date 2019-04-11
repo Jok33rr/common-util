@@ -11,8 +11,8 @@ import java.io.Serializable;
 @Getter
 @Setter
 public class UserDeviceId implements Serializable {
-    @Column(name = "customer_id")
+    @Column(name = "customer_id", nullable = false)
     private Long userId;
-    @Column(name = "device_id")
+    @Column(name = "device_id", nullable = false)
     private Long deviceId;
 }

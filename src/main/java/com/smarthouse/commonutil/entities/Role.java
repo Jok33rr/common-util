@@ -1,53 +1,29 @@
 package com.smarthouse.commonutil.entities;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 @Entity
 public class Role {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     @Length(max = 255)
+    @Column(nullable = false)
     private String name;
     @Min(0) // ADMIN
     @Max(3) // WEAK_OBSERVER
+    @Column(nullable = false)
     private int accessLevel;
-
-    public Role() {
-
-    }
-
-    public Role(final Long id, final String name, final int accessLevel) {
-        this.id = id;
-        this.name = name;
-        this.accessLevel = accessLevel;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAccessLevel() {
-        return accessLevel;
-    }
-
-    public void setAccessLevel(int accessLevel) {
-        this.accessLevel = accessLevel;
-    }
 }
